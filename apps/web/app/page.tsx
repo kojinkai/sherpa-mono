@@ -212,7 +212,10 @@ export default async function Example() {
                 </span>
                 <ChevronUpIcon />
               </DropdownButton>
-              <DropdownMenu className="min-w-64" anchor="top start">
+              <DropdownMenu
+                className="min-w-64 bg-white lg:bg-zinc-100 dark:bg-zinc-900 dark:lg:bg-zinc-950 border border-zinc-950/10 pb-6 dark:border-white/10"
+                anchor="top start"
+              >
                 <DropdownItem href="/my-profile">
                   <UserIcon />
                   <DropdownLabel>My profile</DropdownLabel>
