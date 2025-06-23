@@ -1,0 +1,5 @@
+{
+  "deno.enable": true,
+  "deno.enablePaths": ["./packages/edge-functions/supabase/functions"],
+  "deno.importMap": "./packages/edge-functions/supabase/functions/import_map.json"
+}

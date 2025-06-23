@@ -33,8 +33,6 @@ export async function register(
 
   const { error } = await supabase.auth.signUp(data);
 
-  console.log("error from supabase: ", error);
-
   if (error) {
     redirect("/error");
   }

@@ -1,0 +1,23 @@
+name: deploy-supabase-edge-functions
+
+on:
+  push:
+    paths:
+      - "packages/edge-functions/**"
+      - ".github/workflows/deploy-supabase-edge-functions.yml"
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      PROJECT_ID: $SUPABASE_PROJECT_ID
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - run: cd packages/edge-functions && supabase functions deploy --project-ref $PROJECT_ID

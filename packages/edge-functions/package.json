@@ -1,0 +1,21 @@
+{
+  "name": "edge-functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd supabase/functions && deno test --allow-all tests/refresh-ipo-calendar-test.ts && cd ..",
+    "start": "supabase start && supabase functions serve",
+    "stop": "supabase stop"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.1",
+  "devDependencies": {
+    "supabase": "^2.26.9"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.0"
+  }
+}

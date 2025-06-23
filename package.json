@@ -8,7 +8,10 @@
     "build": "pnpm --filter database db:deploy && pnpm --filter database db:generate  && pnpm --filter web build",
     "start": "pnpm --filter web start",
     "dev": "pnpm --filter database db:generate && pnpm --filter web dev",
-    "studio": "pnpm --filter database db:studio"
+    "studio": "pnpm --filter database db:studio",
+    "supabase:start": "pnpm --filter edge-functions start",
+    "supabase:stop": "pnpm --filter edge-functions stop",
+    "supabase:test": "pnpm --filter edge-functions test"
   },
   "keywords": [],
   "author": "",

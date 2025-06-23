@@ -1,0 +1,10 @@
+model IPO {
+  name               String @id
+  date               String
+  exchange           String?
+  numberOfShares     Int?
+  price              String?
+  status             String
+  symbol             String?
+  totalSharesValue   Int?
+} 
