@@ -1,5 +1,5 @@
 // Import required libraries and modules
-import { assert, assertEquals } from "jsr:@std/assert@1";
+import { assert } from "jsr:@std/assert@1";
 import { createClient, SupabaseClient } from "npm:@supabase/supabase-js@2";
 
 // Will load the .env file to Deno.env

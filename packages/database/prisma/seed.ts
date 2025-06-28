@@ -33,9 +33,9 @@ const ipoData: Prisma.IPOCreateInput[] = [
 ];
 
 export async function main() {
-  // for (const u of userData) {
-  //   await prisma.user.create({ data: u });
-  // }
+  for (const u of userData) {
+    await prisma.user.create({ data: u });
+  }
   for (const ipo of ipoData) {
     await prisma.iPO.create({ data: ipo });
   }

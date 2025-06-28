@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cd supabase/functions && deno test --allow-all tests/refresh-ipo-calendar-test.ts && cd ..",
-    "start": "supabase start && supabase functions serve",
+    "start": "supabase start && supabase functions serve --debug",
     "stop": "supabase stop"
   },
   "keywords": [],
