@@ -1,4 +1,5 @@
 import { PrismaClient, Prisma } from "../generated/client";
+import ipoSeedData from "../ipo-seed-data.json";
 
 const prisma = new PrismaClient();
 
@@ -9,28 +10,7 @@ const userData: Prisma.UserCreateInput[] = [
   },
 ];
 
-const ipoData: Prisma.IPOEventCreateInput[] = [
-  {
-    date: "2020-04-24",
-    exchange: "NASDAQ Global Select",
-    name: "Oric Pharmaceuticals, Inc.",
-    numberOfShares: 7500000,
-    price: "16.00",
-    status: "priced",
-    symbol: "ORIC",
-    totalSharesValue: 120000000,
-  },
-  {
-    date: "2020-04-24",
-    exchange: "NYSE",
-    name: "E2open Parent Holdings, Inc.",
-    numberOfShares: 36000000,
-    price: "10.00",
-    status: "priced",
-    symbol: "PCPLU",
-    totalSharesValue: 360000000,
-  },
-];
+const ipoData: Prisma.IPOEventCreateInput[] = ipoSeedData;
 
 export async function main() {
   for (const u of userData) {
