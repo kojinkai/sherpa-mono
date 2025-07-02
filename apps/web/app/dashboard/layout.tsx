@@ -257,7 +257,7 @@ export default async function DashboardLayout({
         </aside>
       }
     >
-      <main>{children}</main>
+      {children}
     </SidebarLayout>
   );
 }
