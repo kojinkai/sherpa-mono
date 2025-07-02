@@ -120,16 +120,6 @@
     "totalSharesValue": 153978683.91
   },
   {
-    "symbol": "OIGPU",
-    "date": "2025-01-10T00:00:00.000Z",
-    "exchange": null,
-    "name": "Origin Investment Corp I",
-    "status": "filed",
-    "price": null,
-    "numberOfShares": null,
-    "totalSharesValue": 69000000
-  },
-  {
     "symbol": "MTNEU",
     "date": "2025-01-10T00:00:00.000Z",
     "exchange": null,
@@ -808,16 +798,6 @@
     "price": null,
     "numberOfShares": null,
     "totalSharesValue": 10637500
-  },
-  {
-    "symbol": "RNBW",
-    "date": "2025-02-14T00:00:00.000Z",
-    "exchange": null,
-    "name": "Rainbow Capital Holdings Ltd",
-    "status": "filed",
-    "price": null,
-    "numberOfShares": null,
-    "totalSharesValue": 7906250
   },
   {
     "symbol": "NNNN",
@@ -1740,16 +1720,6 @@
     "totalSharesValue": 25875000
   },
   {
-    "symbol": "GTERU",
-    "date": "2025-04-16T00:00:00.000Z",
-    "exchange": null,
-    "name": "Globa Terra Acquisition Corp",
-    "status": "filed",
-    "price": null,
-    "numberOfShares": null,
-    "totalSharesValue": 174995500
-  },
-  {
     "symbol": "CHA",
     "date": "2025-04-17T00:00:00.000Z",
     "exchange": "NASDAQ Global Select",
@@ -2168,16 +2138,6 @@
     "price": null,
     "numberOfShares": null,
     "totalSharesValue": null
-  },
-  {
-    "symbol": "NMPAU",
-    "date": "2025-05-06T00:00:00.000Z",
-    "exchange": null,
-    "name": "NMP Acquisition Corp.",
-    "status": "filed",
-    "price": null,
-    "numberOfShares": null,
-    "totalSharesValue": 115000000
   },
   {
     "symbol": null,
@@ -2660,16 +2620,6 @@
     "totalSharesValue": 8625000
   },
   {
-    "symbol": "CCIIU",
-    "date": "2025-05-23T00:00:00.000Z",
-    "exchange": null,
-    "name": "Cohen Circle Acquisition Corp. II",
-    "status": "filed",
-    "price": null,
-    "numberOfShares": null,
-    "totalSharesValue": 253000000
-  },
-  {
     "symbol": "DXG",
     "date": "2025-05-27T00:00:00.000Z",
     "exchange": null,
@@ -2840,16 +2790,6 @@
     "totalSharesValue": 253000000
   },
   {
-    "symbol": "",
-    "date": "2025-06-06T00:00:00.000Z",
-    "exchange": null,
-    "name": "CoastalSouth Bancshares, Inc.",
-    "status": "filed",
-    "price": null,
-    "numberOfShares": null,
-    "totalSharesValue": 70265000
-  },
-  {
     "symbol": "GINT",
     "date": "2025-06-06T00:00:00.000Z",
     "exchange": null,
@@ -2920,16 +2860,6 @@
     "totalSharesValue": 220000000
   },
   {
-    "symbol": "EVACU",
-    "date": "2025-06-10T00:00:00.000Z",
-    "exchange": null,
-    "name": "EQV Ventures Acquisition Corp. II",
-    "status": "filed",
-    "price": null,
-    "numberOfShares": null,
-    "totalSharesValue": 402500000
-  },
-  {
     "symbol": "VOYG",
     "date": "2025-06-11T00:00:00.000Z",
     "exchange": "NYSE",
@@ -2950,16 +2880,6 @@
     "totalSharesValue": 113333339
   },
   {
-    "symbol": "ONCHU",
-    "date": "2025-06-11T00:00:00.000Z",
-    "exchange": null,
-    "name": "1RT Acquisition Corp.",
-    "status": "filed",
-    "price": null,
-    "numberOfShares": null,
-    "totalSharesValue": 172500000
-  },
-  {
     "symbol": "CHYM",
     "date": "2025-06-12T00:00:00.000Z",
     "exchange": "NASDAQ Global Select",
@@ -2978,16 +2898,6 @@
     "price": "4.00",
     "numberOfShares": 3250000,
     "totalSharesValue": 13000000
-  },
-  {
-    "symbol": "INACU",
-    "date": "2025-06-12T00:00:00.000Z",
-    "exchange": null,
-    "name": "Indigo Acquisition Corp.",
-    "status": "filed",
-    "price": null,
-    "numberOfShares": null,
-    "totalSharesValue": 115000000
   },
   {
     "symbol": "SSEAU",
@@ -3358,5 +3268,245 @@
     "price": null,
     "numberOfShares": null,
     "totalSharesValue": 201250000
+  },
+  {
+    "symbol": "ARBCU",
+    "date": "2025-06-30T00:00:00.000Z",
+    "exchange": null,
+    "name": "D. Boral ARC Acquisition II Corp.",
+    "status": "filed",
+    "price": null,
+    "numberOfShares": null,
+    "totalSharesValue": 287500000
+  },
+  {
+    "symbol": "",
+    "date": "2025-06-30T00:00:00.000Z",
+    "exchange": null,
+    "name": "Somitos Corp.",
+    "status": "filed",
+    "price": null,
+    "numberOfShares": null,
+    "totalSharesValue": 120000
+  },
+  {
+    "symbol": "ARX",
+    "date": "2025-06-30T00:00:00.000Z",
+    "exchange": null,
+    "name": "Accelerant Holdings",
+    "status": "filed",
+    "price": null,
+    "numberOfShares": null,
+    "totalSharesValue": 100000000
+  },
+  {
+    "symbol": "ZDAN",
+    "date": "2025-06-30T00:00:00.000Z",
+    "exchange": null,
+    "name": "Zerolimit Technology Holding Co. Ltd.",
+    "status": "filed",
+    "price": null,
+    "numberOfShares": null,
+    "totalSharesValue": 9200000
+  },
+  {
+    "symbol": "MKLYU",
+    "date": "2025-06-30T00:00:00.000Z",
+    "exchange": null,
+    "name": "McKinley Acquisition Corp",
+    "status": "filed",
+    "price": null,
+    "numberOfShares": null,
+    "totalSharesValue": 172500000
+  },
+  {
+    "symbol": "INACU",
+    "date": "2025-07-01T00:00:00.000Z",
+    "exchange": "NASDAQ Global",
+    "name": "Indigo Acquisition Corp.",
+    "status": "priced",
+    "price": "10.00",
+    "numberOfShares": 10000000,
+    "totalSharesValue": 100000000
+  },
+  {
+    "symbol": "CCIIU",
+    "date": "2025-07-01T00:00:00.000Z",
+    "exchange": "NASDAQ Global",
+    "name": "Cohen Circle Acquisition Corp. II",
+    "status": "priced",
+    "price": "10.00",
+    "numberOfShares": 22000000,
+    "totalSharesValue": 220000000
+  },
+  {
+    "symbol": "NMPAU",
+    "date": "2025-07-01T00:00:00.000Z",
+    "exchange": "NASDAQ Global",
+    "name": "NMP Acquisition Corp.",
+    "status": "priced",
+    "price": "10.00",
+    "numberOfShares": 10000000,
+    "totalSharesValue": 100000000
+  },
+  {
+    "symbol": "GRAN",
+    "date": "2025-07-01T00:00:00.000Z",
+    "exchange": "NASDAQ Capital",
+    "name": "Grande Group Ltd/HK",
+    "status": "priced",
+    "price": "5.00",
+    "numberOfShares": 1875000,
+    "totalSharesValue": 9375000
+  },
+  {
+    "symbol": "FIG",
+    "date": "2025-07-01T00:00:00.000Z",
+    "exchange": null,
+    "name": "Figma, Inc.",
+    "status": "filed",
+    "price": null,
+    "numberOfShares": null,
+    "totalSharesValue": 100000000
+  },
+  {
+    "symbol": "RNBW",
+    "date": "2025-07-01T00:00:00.000Z",
+    "exchange": "NASDAQ Capital",
+    "name": "Rainbow Capital Holdings Ltd",
+    "status": "expected",
+    "price": "4.00-5.00",
+    "numberOfShares": 1375000,
+    "totalSharesValue": 7906250
+  },
+  {
+    "symbol": "ONCHU",
+    "date": "2025-07-02T00:00:00.000Z",
+    "exchange": "NASDAQ Global",
+    "name": "1RT Acquisition Corp.",
+    "status": "priced",
+    "price": "10.00",
+    "numberOfShares": 15000000,
+    "totalSharesValue": 150000000
+  },
+  {
+    "symbol": "EVACU",
+    "date": "2025-07-02T00:00:00.000Z",
+    "exchange": "NYSE",
+    "name": "EQV Ventures Acquisition Corp. II",
+    "status": "priced",
+    "price": "10.00",
+    "numberOfShares": 42000000,
+    "totalSharesValue": 420000000
+  },
+  {
+    "symbol": "COSO",
+    "date": "2025-07-02T00:00:00.000Z",
+    "exchange": "NYSE",
+    "name": "CoastalSouth Bancshares, Inc.",
+    "status": "priced",
+    "price": "21.50",
+    "numberOfShares": 2035000,
+    "totalSharesValue": 43752500
+  },
+  {
+    "symbol": "CV",
+    "date": "2025-07-02T00:00:00.000Z",
+    "exchange": "NASDAQ Capital",
+    "name": "CapsoVision, Inc",
+    "status": "priced",
+    "price": "5.00",
+    "numberOfShares": 5500000,
+    "totalSharesValue": 27500000
+  },
+  {
+    "symbol": "VNMEU",
+    "date": "2025-07-02T00:00:00.000Z",
+    "exchange": "NASDAQ Global",
+    "name": "Vendome Acquisition Corp I",
+    "status": "priced",
+    "price": "10.00",
+    "numberOfShares": 20000000,
+    "totalSharesValue": 200000000
+  },
+  {
+    "symbol": "ORIQU",
+    "date": "2025-07-02T00:00:00.000Z",
+    "exchange": "NASDAQ Global",
+    "name": "Origin Investment Corp I",
+    "status": "priced",
+    "price": "10.00",
+    "numberOfShares": 6000000,
+    "totalSharesValue": 60000000
+  },
+  {
+    "symbol": "EMPG",
+    "date": "2025-07-02T00:00:00.000Z",
+    "exchange": "NASDAQ Capital",
+    "name": "Empro Group Inc.",
+    "status": "priced",
+    "price": "4.00",
+    "numberOfShares": 1375000,
+    "totalSharesValue": 5500000
+  },
+  {
+    "symbol": "RPGL",
+    "date": "2025-07-02T00:00:00.000Z",
+    "exchange": null,
+    "name": "Republic Power Group Ltd",
+    "status": "filed",
+    "price": null,
+    "numberOfShares": null,
+    "totalSharesValue": 8750000
+  },
+  {
+    "symbol": "TCBG",
+    "date": "2025-07-02T00:00:00.000Z",
+    "exchange": null,
+    "name": "Top Create Biotech Co., Ltd.",
+    "status": "filed",
+    "price": null,
+    "numberOfShares": null,
+    "totalSharesValue": 1000000
+  },
+  {
+    "symbol": "AMBQ",
+    "date": "2025-07-03T00:00:00.000Z",
+    "exchange": null,
+    "name": "Ambiq Micro, Inc.",
+    "status": "filed",
+    "price": null,
+    "numberOfShares": null,
+    "totalSharesValue": 75000000
+  },
+  {
+    "symbol": "HSFZ",
+    "date": "2025-07-03T00:00:00.000Z",
+    "exchange": null,
+    "name": "Global Thrive Fulfill Group Inc",
+    "status": "filed",
+    "price": null,
+    "numberOfShares": null,
+    "totalSharesValue": 20000000
+  },
+  {
+    "symbol": "CHECU",
+    "date": "2025-07-03T00:00:00.000Z",
+    "exchange": null,
+    "name": "Chenghe Acquisition III Co.",
+    "status": "filed",
+    "price": null,
+    "numberOfShares": null,
+    "totalSharesValue": 126500000
+  },
+  {
+    "symbol": "EMISU",
+    "date": "2025-07-03T00:00:00.000Z",
+    "exchange": null,
+    "name": "Emmis Acquisition Corp.",
+    "status": "filed",
+    "price": null,
+    "numberOfShares": null,
+    "totalSharesValue": 115000000
   }
 ]

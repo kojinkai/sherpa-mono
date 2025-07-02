@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { inter } from "./fonts";
+import clsx from "clsx";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,7 +14,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={`${inter.className} antialiased`} lang="en">
+    <html
+      className={clsx(
+        "bg-white lg:bg-zinc-100 dark:bg-zinc-900 dark:lg:bg-zinc-950 antialiased",
+        inter.className
+      )}
+      lang="en"
+    >
       <body>{children}</body>
     </html>
   );

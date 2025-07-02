@@ -32,6 +32,6 @@ export async function login(
     redirect("/error");
   }
 
-  revalidatePath("/", "layout");
-  redirect("/");
+  revalidatePath("/dashboard");
+  redirect("/dashboard");
 }
