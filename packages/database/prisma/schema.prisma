@@ -17,7 +17,7 @@ model User {
 model IPOEvent {
   id    Int     @id @default(autoincrement())
   name               String
-  date               String
+  date               DateTime
   exchange           String?
   numberOfShares     Int?
   price              String?
