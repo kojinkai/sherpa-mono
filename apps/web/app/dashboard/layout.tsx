@@ -24,7 +24,7 @@ import {
   SidebarSpacer,
   SidebarLayout,
   Heading,
-} from "@/components";
+} from "@/catalyst-components";
 
 import {
   ArrowRightStartOnRectangleIcon,
@@ -165,7 +165,7 @@ export default async function DashboardLayout({
                   <HomeIcon />
                   <SidebarLabel>Home</SidebarLabel>
                 </SidebarItem>
-                <SidebarItem href="dashboard/ipo">
+                <SidebarItem href="dashboard/ipo-calendar">
                   <Square2StackIcon />
                   <SidebarLabel>IPO Calendar</SidebarLabel>
                 </SidebarItem>

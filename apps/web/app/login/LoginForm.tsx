@@ -15,7 +15,7 @@ import {
   Text,
   TextLink,
   ValidatedInput,
-} from "@/components";
+} from "@/catalyst-components";
 import { LoginActionState, loginFormSchema } from "./schema";
 
 const initialState: LoginActionState = {
