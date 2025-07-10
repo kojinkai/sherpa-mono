@@ -1,4 +1,4 @@
-import { PrismaClient, Prisma } from "../generated/client";
+import { Prisma, PrismaClient } from "../generated/client";
 import ipoSeedData from "../ipo-seed-data.json";
 
 const prisma = new PrismaClient();
@@ -17,7 +17,9 @@ export async function main() {
     await prisma.user.create({ data: u });
   }
   for (const ipoEvent of ipoData) {
-    await prisma.iPOEvent.create({ data: ipoEvent });
+    await prisma.iPOEvent.create({
+      data: { ...ipoEvent, date: new Date(ipoEvent.date) },
+    });
   }
 }
 
