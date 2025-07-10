@@ -17,12 +17,12 @@
   "packageManager": "pnpm@10.12.1",
   "devDependencies": {
     "@types/node": "^24.0.3",
-    "prisma": "catalog:prisma",
+    "prisma": "^6.11.1",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@prisma/client": "6.10.0",
+    "@prisma/client": "6.11.1",
     "finnhub": "^1.2.19"
   },
   "prisma": {

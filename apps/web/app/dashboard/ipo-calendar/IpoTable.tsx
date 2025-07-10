@@ -2,12 +2,6 @@
 
 import {
   Badge,
-  Pagination,
-  PaginationGap,
-  PaginationList,
-  PaginationNext,
-  PaginationPage,
-  PaginationPrevious,
   Table,
   TableBody,
   TableCell,
@@ -19,29 +13,13 @@ import { formatDate, formatNumber, formatPrice } from "@/utils/formatters";
 import { useGetLinkParams } from "@/utils/url";
 import { CalendarIcon } from "@heroicons/react/24/outline";
 import type { IPOEvent } from "database";
-import { take, takeRight } from "lodash/fp";
 
 interface IpoTableProps {
   events: IPOEvent[];
-  page: number;
-  totalPages: number;
 }
 
-export function IpoTable({ totalPages, events, page }: IpoTableProps) {
+export function IpoTable({ events }: IpoTableProps) {
   const getLinkParams = useGetLinkParams();
-
-  const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
-
-  const { firstPages, lastPages, divide } = (() => {
-    const divide = totalPages > 6;
-    const first = divide ? 4 : 6;
-    const last = divide ? Math.min(2, totalPages - 4) : 0;
-    return {
-      firstPages: take(first)(pages),
-      lastPages: takeRight(last)(pages),
-      divide,
-    };
-  })();
 
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
@@ -78,8 +56,8 @@ export function IpoTable({ totalPages, events, page }: IpoTableProps) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {events.map((event) => (
-              <TableRow key={event.id}>
+            {events.map((event, idx) => (
+              <TableRow key={idx}>
                 <TableCell className="font-medium">{event.name}</TableCell>
                 <TableCell>
                   {event.symbol ? (
@@ -111,43 +89,6 @@ export function IpoTable({ totalPages, events, page }: IpoTableProps) {
             ))}
           </TableBody>
         </Table>
-      )}
-
-      {totalPages > 1 && (
-        <Pagination>
-          <PaginationPrevious
-            href={page > 1 ? getLinkParams({ page: page - 1 }) : null}
-          />
-          <PaginationList>
-            {firstPages.map((currentPage) => (
-              <PaginationPage
-                current={currentPage === page}
-                href={getLinkParams({ page: currentPage })}
-                key={currentPage}
-              >
-                {currentPage}
-              </PaginationPage>
-            ))}
-
-            {divide && (
-              <>
-                <PaginationGap />
-                {lastPages.map((currentPage) => (
-                  <PaginationPage
-                    current={currentPage === page}
-                    href={getLinkParams({ page: currentPage })}
-                    key={currentPage}
-                  >
-                    {currentPage}
-                  </PaginationPage>
-                ))}
-              </>
-            )}
-          </PaginationList>
-          <PaginationNext
-            href={page < totalPages ? getLinkParams({ page: page + 1 }) : null}
-          />
-        </Pagination>
       )}
 
       {events.length === 0 && (

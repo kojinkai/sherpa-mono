@@ -1,5 +1,4 @@
 import dayjs from "dayjs";
-import { DateRangeQuery } from "./interface";
 
 export function getIpoEventFilters({
   from,
@@ -8,11 +7,6 @@ export function getIpoEventFilters({
   from?: string;
   to?: string;
 }) {
-  const query: DateRangeQuery = {};
-  const parsedFrom = dayjs(from);
-  const parsedTo = dayjs(to);
-  const parsedFromIsValid = parsedFrom.isValid();
-  const parsedToIsValid = parsedTo.isValid();
   const yesterdayFrom = dayjs().subtract(1, "day").toISOString().split("T")[0];
   const lastWeekFrom = dayjs().subtract(1, "week").toISOString().split("T")[0];
 
@@ -34,18 +28,5 @@ export function getIpoEventFilters({
     },
   ];
 
-  // Add date range filter if either from or to date is provided
-  if (from || to) {
-    query.date = {};
-
-    if (from && parsedFromIsValid) {
-      query.date.gte = parsedFrom.toISOString();
-    }
-
-    if (to && parsedToIsValid) {
-      query.date.lte = parsedTo.toISOString();
-    }
-  }
-
-  return { query, filters };
+  return filters;
 }
