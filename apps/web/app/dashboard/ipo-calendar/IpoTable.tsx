@@ -9,8 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/catalyst-components";
-import { formatDate, formatNumber, formatPrice } from "@/utils/formatters";
-import { useGetLinkParams } from "@/utils/url";
+import { formatDate, formatNumber } from "@/utils/formatters";
 import { CalendarIcon } from "@heroicons/react/24/outline";
 import type { IPOEvent } from "database";
 
@@ -19,8 +18,6 @@ interface IpoTableProps {
 }
 
 export function IpoTable({ events }: IpoTableProps) {
-  const getLinkParams = useGetLinkParams();
-
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
       case "filed":
@@ -50,7 +47,6 @@ export function IpoTable({ events }: IpoTableProps) {
               <TableHeader>Symbol</TableHeader>
               <TableHeader>Date</TableHeader>
               <TableHeader>Exchange</TableHeader>
-              <TableHeader>Price</TableHeader>
               <TableHeader>Total Value</TableHeader>
               <TableHeader>Status</TableHeader>
             </TableRow>
@@ -58,7 +54,9 @@ export function IpoTable({ events }: IpoTableProps) {
           <TableBody>
             {events.map((event, idx) => (
               <TableRow key={idx}>
-                <TableCell className="font-medium">{event.name}</TableCell>
+                <TableCell className="font-medium w-1/4">
+                  {event.name}
+                </TableCell>
                 <TableCell>
                   {event.symbol ? (
                     <span className="font-mono text-sm">{event.symbol}</span>
@@ -74,7 +72,6 @@ export function IpoTable({ events }: IpoTableProps) {
                     "N/A"
                   )}
                 </TableCell>
-                <TableCell>{formatPrice(event.price)}</TableCell>
                 <TableCell>
                   {event.totalSharesValue
                     ? `$${formatNumber(event.totalSharesValue)}`
