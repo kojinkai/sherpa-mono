@@ -1,7 +1,20 @@
-export type DateRangeQuery = { date?: { gte?: string; lte?: string } };
+export enum TimeFilters {
+  MAXIMUM = "Maximum",
+  LAST_24 = "Last 24 Hours",
+  LAST_WEEK = "Last Week",
+}
 
-export type DateRangeFilter = {
+export enum ExchangeFilters {
+  NYSE = "NYSE",
+  NASDAQ_CAPITAL = "NASDAQ Capital",
+  NASDAQ_GLOBAL = "NASDAQ Global",
+  NASDAQ_GLOBAL_SELECT = "NASDAQ Global Select",
+}
+
+export type IpoTableFilterOptions = {
   name: string;
-  href: string;
-  active: boolean;
-};
+  defaultValue: TimeFilters | ExchangeFilters;
+  value: TimeFilters | ExchangeFilters;
+  onChange: (value: TimeFilters | ExchangeFilters) => void;
+  options: { label: string }[];
+}[];
