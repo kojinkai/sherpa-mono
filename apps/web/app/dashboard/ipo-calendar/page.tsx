@@ -1,7 +1,7 @@
 import { PageHeading } from "@/components";
-import { IpoTable } from "./IpoTable";
-import { IpoTableFilters } from "./IpoTableFilters";
-import { getIpoCalendarData } from "./getData";
+import { getIpoCalendarData } from "./get-data";
+import { IpoTable } from "./ipo-table";
+import { IpoTableFilters } from "./ipo-table-filters";
 
 export default async function IpoCalendarPage({
   searchParams,
