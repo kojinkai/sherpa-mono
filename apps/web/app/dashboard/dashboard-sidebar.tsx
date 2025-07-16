@@ -40,8 +40,6 @@ interface DashboardSidebarProps {
 export function DashboardSidebar({ user }: DashboardSidebarProps) {
   const pathname = usePathname();
 
-  console.log("pathname: ", pathname);
-
   return (
     <aside className="h-screen">
       <Sidebar className="flex flex-col justify-between">

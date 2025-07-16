@@ -1,7 +1,5 @@
-import { PageHeading } from "@/components";
 import { getIpoCalendarData } from "./get-data";
-import { IpoTable } from "./ipo-table";
-import { IpoTableFilters } from "./ipo-table-filters";
+import { IpoCalendar } from "./ipo-calendar";
 
 export default async function IpoCalendarPage({
   searchParams,
@@ -12,13 +10,5 @@ export default async function IpoCalendarPage({
 
   const { success, data: events } = await getIpoCalendarData({ from, to });
 
-  return (
-    <div className="flex flex-col gap-8">
-      <PageHeading title="IPO Calendar">
-        <IpoTableFilters />
-      </PageHeading>
-
-      <IpoTable events={events} />
-    </div>
-  );
+  return <IpoCalendar events={events} />;
 }
