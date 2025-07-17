@@ -18,6 +18,7 @@ import {
   SidebarSection,
   SidebarSpacer,
 } from "@/catalyst-components";
+import { ChevronDownIcon, PlusIcon } from "@heroicons/react/16/solid";
 import {
   ArrowRightStartOnRectangleIcon,
   CalendarDaysIcon,
@@ -45,13 +46,40 @@ export function DashboardSidebar({ user }: DashboardSidebarProps) {
       <Sidebar className="flex flex-col justify-between">
         <div>
           <SidebarHeader>
-            <SidebarSection className="max-lg:hidden flex items-center gap-1">
-              <Avatar
-                className="size-8"
-                src="https://catalyst.tailwindui.com/tailwind-logo.svg"
-              />
-              <SidebarLabel>Tailwind Labs</SidebarLabel>
-            </SidebarSection>
+            <Dropdown>
+              <DropdownButton as={SidebarItem} className="lg:mb-2.5">
+                <Avatar src="https://catalyst.tailwindui.com/tailwind-logo.svg" />
+                <SidebarLabel>Tailwind Labs</SidebarLabel>
+                <ChevronDownIcon />
+              </DropdownButton>
+              <DropdownMenu
+                className="min-w-80 lg:min-w-64"
+                anchor="bottom start"
+              >
+                <DropdownItem href="/teams/1/settings">
+                  <Cog8ToothIcon />
+                  <DropdownLabel>Settings</DropdownLabel>
+                </DropdownItem>
+                <DropdownDivider />
+                <DropdownItem href="/teams/1">
+                  <Avatar slot="icon" src="/tailwind-logo.svg" />
+                  <DropdownLabel>Tailwind Labs</DropdownLabel>
+                </DropdownItem>
+                <DropdownItem href="/teams/2">
+                  <Avatar
+                    slot="icon"
+                    initials="WC"
+                    className="bg-purple-500 text-white"
+                  />
+                  <DropdownLabel>Workcation</DropdownLabel>
+                </DropdownItem>
+                <DropdownDivider />
+                <DropdownItem href="/teams/create">
+                  <PlusIcon />
+                  <DropdownLabel>New team&hellip;</DropdownLabel>
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
 
             <SidebarSection className="max-lg:hidden">
               <SidebarItem href="/search">
@@ -96,7 +124,15 @@ export function DashboardSidebar({ user }: DashboardSidebarProps) {
             <DropdownButton as={SidebarItem}>
               <span className="flex min-w-0 items-center gap-3">
                 <Avatar
-                  src="https://catalyst.tailwindui.com/profile-photo.jpg"
+                  initials={
+                    user?.name
+                      ? user.name
+                          .split(" ")
+                          .slice(0, 2)
+                          .map(([initial, ...rest]) => initial)
+                          .join("")
+                      : undefined
+                  }
                   className="size-10"
                   square
                   alt=""
