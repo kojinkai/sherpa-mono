@@ -1,12 +1,6 @@
 import dayjs from "dayjs";
 
-export async function getIpoCalendarData({
-  from,
-  to,
-}: {
-  from?: string;
-  to?: string;
-}) {
+export async function getIpoCalendarData() {
   try {
     const apiKey = process.env.FINNHUB_API_KEY;
 
@@ -14,21 +8,10 @@ export async function getIpoCalendarData({
       throw new Error("FINNHUB_API_KEY environment variable is not set");
     }
 
-    const parsedFrom = dayjs(from);
-    const parsedTo = dayjs(to);
-    const fromIsValid = parsedFrom.isValid();
-    const toIsValid = parsedTo.isValid();
-
     // Default to current month if no dates provided
-    const fromDate =
-      from && fromIsValid
-        ? parsedFrom.toISOString().split("T")[0]
-        : dayjs("2025-01-01").toISOString().split("T")[0];
+    const fromDate = dayjs("2025-01-01").toISOString().split("T")[0];
 
-    const toDate =
-      to && toIsValid
-        ? parsedTo.toISOString().split("T")[0]
-        : dayjs().add(1, "month").toISOString().split("T")[0];
+    const toDate = dayjs().add(1, "month").toISOString().split("T")[0];
 
     const url = `https://finnhub.io/api/v1/calendar/ipo?from=${fromDate}&to=${toDate}`;
 

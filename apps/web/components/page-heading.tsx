@@ -13,9 +13,9 @@ export function PageHeading({
       {...props}
       className={clsx(
         className,
-        "flex-wrap justify-between gap-4 border-b border-zinc-950/10 px-4 pb-4 sm:px-6 lg:px-10 dark:border-white/10",
+        "border-b border-zinc-950/10 px-4 pb-4 sm:px-6 lg:px-10 dark:border-white/10",
         "-mx-6 lg:-mx-10",
-        { "flex items-center": Boolean(children) }
+        { "flex flex-col gap-4 ": Boolean(children) }
       )}
     >
       <Heading>{title}</Heading>
