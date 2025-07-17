@@ -129,7 +129,7 @@ export function DashboardSidebar({ user }: DashboardSidebarProps) {
                       ? user.name
                           .split(" ")
                           .slice(0, 2)
-                          .map(([initial, ...rest]) => initial)
+                          .map(([initial]) => initial)
                           .join("")
                       : undefined
                   }
