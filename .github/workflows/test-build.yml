@@ -26,12 +26,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-        # working-directory: apps/web
 
       - name: Run lint
         run: pnpm --filter web lint
-        # working-directory: apps/web
-
-      - name: Run build
-        run: pnpm --filter database db:generate && pnpm --filter web build
-        # working-directory: apps/web
