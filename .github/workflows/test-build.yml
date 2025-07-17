@@ -1,0 +1,35 @@
+name: test-build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+    environment: development
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+        # working-directory: apps/web
+
+      - name: Run lint
+        run: pnpm --filter web lint
+        # working-directory: apps/web
+
+      - name: Run build
+        run: pnpm --filter database db:generate && pnpm --filter web build
+        # working-directory: apps/web
