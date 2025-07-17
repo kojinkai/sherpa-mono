@@ -1,16 +1,14 @@
 "use client";
 
-import { ValidatedInput } from "@/components";
-import { register } from "./actions";
-import { AuthLayout } from "@/components/auth-layout";
-import { Button } from "@/components/button";
-import { Checkbox, CheckboxField } from "@/components/checkbox";
-import { Field, Label } from "@/components/fieldset";
-import { Heading } from "@/components/heading";
-import { Input } from "@/components/input";
-import { Strong, Text, TextLink } from "@/components/text";
+import { AuthLayout } from "@/catalyst-components/auth-layout";
+import { Button } from "@/catalyst-components/button";
+import { Field, Label } from "@/catalyst-components/fieldset";
+import { Heading } from "@/catalyst-components/heading";
+import { Strong, Text, TextLink } from "@/catalyst-components/text";
+import { ValidatedInput } from "@/catalyst-components/validated-input";
 import Form from "next/form";
 import { useActionState, useState } from "react";
+import { register } from "./actions";
 import { RegisterActionState, registerFormSchema } from "./schema";
 
 const initialState: RegisterActionState = {

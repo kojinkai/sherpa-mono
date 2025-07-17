@@ -1,9 +1,10 @@
 "use client";
 
 import { PageHeading } from "@/components";
+import { StandardAction } from "@/utils/reducer";
 import type { IPOEvent } from "database";
 import { filter, flow } from "lodash/fp";
-import { useMemo, useState } from "react";
+import { useMemo, useReducer } from "react";
 import { filterFunctionMap } from "./filters";
 import {
   ExchangeFilters,
@@ -18,23 +19,64 @@ interface IpoCalendarProps {
   events: IPOEvent[];
 }
 
-export function IpoCalendar({ events }: IpoCalendarProps) {
-  const [timeFilter, setTimeFilter] = useState(TimeFilters.MAXIMUM);
-  const [exchangeFilter, setExchangeFilter] = useState(
-    ExchangeFilters.NASDAQ_GLOBAL_SELECT
-  );
-  const [statusFilter, setStatusFilter] = useState(StatusFilters.ALL);
+type FilterState = {
+  time: TimeFilters;
+  exchange: ExchangeFilters;
+  status: StatusFilters;
+};
 
-  console.log("statusFIlter: ", statusFilter);
+enum ActionTypes {
+  TIME = "TIME",
+  EXCHANGE = "EXCHANGE",
+  STATUS = "STATUS",
+}
+
+function reducer(
+  state: FilterState,
+  action: StandardAction<
+    ActionTypes,
+    TimeFilters | ExchangeFilters | StatusFilters
+  >
+) {
+  switch (action.type) {
+    case ActionTypes.TIME: {
+      return {
+        ...state,
+        time: action.payload as TimeFilters,
+      };
+    }
+    case ActionTypes.EXCHANGE: {
+      return {
+        ...state,
+        exchange: action.payload as ExchangeFilters,
+      };
+    }
+    case ActionTypes.STATUS: {
+      return {
+        ...state,
+        status: action.payload as StatusFilters,
+      };
+    }
+  }
+}
+
+const initialState: FilterState = {
+  time: TimeFilters.MAXIMUM,
+  exchange: ExchangeFilters.NASDAQ_GLOBAL_SELECT,
+  status: StatusFilters.ALL,
+};
+
+export function IpoCalendar({ events }: IpoCalendarProps) {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const filters: IpoTableFilterOptions = useMemo(
     () => [
       {
         name: "date",
-        defaultValue: timeFilter,
-        value: timeFilter,
+        defaultValue: state.time,
+        value: state.time,
         onChange: (value: TimeFilters | ExchangeFilters | StatusFilters) =>
-          setTimeFilter(value as TimeFilters),
+          dispatch({ type: ActionTypes.TIME, payload: value as TimeFilters }),
         options: [
           { label: TimeFilters.MAXIMUM },
           {
@@ -47,10 +89,13 @@ export function IpoCalendar({ events }: IpoCalendarProps) {
       },
       {
         name: "exchange",
-        defaultValue: exchangeFilter,
-        value: exchangeFilter,
+        defaultValue: state.exchange,
+        value: state.exchange,
         onChange: (value: TimeFilters | ExchangeFilters | StatusFilters) =>
-          setExchangeFilter(value as ExchangeFilters),
+          dispatch({
+            type: ActionTypes.EXCHANGE,
+            payload: value as ExchangeFilters,
+          }),
         options: [
           { label: ExchangeFilters.ALL },
           { label: ExchangeFilters.NYSE },
@@ -67,10 +112,13 @@ export function IpoCalendar({ events }: IpoCalendarProps) {
       },
       {
         name: "status",
-        defaultValue: statusFilter,
-        value: statusFilter,
+        defaultValue: state.status,
+        value: state.status,
         onChange: (value: TimeFilters | ExchangeFilters | StatusFilters) =>
-          setStatusFilter(value as StatusFilters),
+          dispatch({
+            type: ActionTypes.STATUS,
+            payload: value as StatusFilters,
+          }),
         options: [
           { label: StatusFilters.ALL },
           { label: StatusFilters.EXPECTED },
@@ -86,17 +134,17 @@ export function IpoCalendar({ events }: IpoCalendarProps) {
         ],
       },
     ],
-    [timeFilter, exchangeFilter, statusFilter]
+    [state.time, state.exchange, state.status]
   );
 
   const filteredEvents = useMemo(
     () =>
       flow(
-        filter(filterFunctionMap[timeFilter]),
-        filter(filterFunctionMap[exchangeFilter]),
-        filter(filterFunctionMap[statusFilter])
+        filter(filterFunctionMap[state.time]),
+        filter(filterFunctionMap[state.exchange]),
+        filter(filterFunctionMap[state.status])
       )(events),
-    [timeFilter, exchangeFilter, statusFilter]
+    [state.time, state.exchange, state.status, events]
   );
 
   return (
