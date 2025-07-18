@@ -1,36 +1,24 @@
 import { prisma } from "database";
 import React from "react";
 
-import {
-  Avatar,
-  Dropdown,
-  DropdownButton,
-  DropdownDivider,
-  DropdownItem,
-  DropdownLabel,
-  DropdownMenu,
-  Navbar,
-  NavbarItem,
-  NavbarSection,
-  NavbarSpacer,
-  SidebarLayout,
-} from "@/catalyst-components";
+import { StackedLayout } from "@/catalyst-components";
 
-import {
-  ArrowRightStartOnRectangleIcon,
-  Cog8ToothIcon,
-  LightBulbIcon,
-  ShieldCheckIcon,
-  UserIcon,
-} from "@heroicons/react/16/solid";
-import { InboxIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { Metadata } from "next";
+import { DashboardNavbar } from "./dashboard-navbar";
+// import { DashboardSidebar } from "./dashboard-sidebar";
+
 import { DashboardSidebar } from "./dashboard-sidebar";
+import { NavItem } from "./interface";
 
 export const metadata: Metadata = {
   title: "Dashboard",
   description: "The Sherpa Dashboard",
 };
+
+const navItems: NavItem[] = [
+  { label: "Home", url: "/dashboard" },
+  { label: "IPO Calendar", url: "/dashboard/ipo-calendar" },
+];
 
 export default async function DashboardLayout({
   children,
@@ -46,55 +34,11 @@ export default async function DashboardLayout({
   });
 
   return (
-    <SidebarLayout
-      navbar={
-        <Navbar>
-          <NavbarSpacer />
-          <NavbarSection>
-            <NavbarItem href="/search" aria-label="Search">
-              <MagnifyingGlassIcon />
-            </NavbarItem>
-            <NavbarItem href="/inbox" aria-label="Inbox">
-              <InboxIcon />
-            </NavbarItem>
-            <Dropdown>
-              <DropdownButton as={NavbarItem}>
-                <Avatar
-                  src="https://catalyst.tailwindui.com/profile-photo.jpg"
-                  square
-                />
-              </DropdownButton>
-              <DropdownMenu className="min-w-64" anchor="bottom end">
-                <DropdownItem href="/my-profile">
-                  <UserIcon />
-                  <DropdownLabel>My profile</DropdownLabel>
-                </DropdownItem>
-                <DropdownItem href="/settings">
-                  <Cog8ToothIcon />
-                  <DropdownLabel>Settings</DropdownLabel>
-                </DropdownItem>
-                <DropdownDivider />
-                <DropdownItem href="/privacy-policy">
-                  <ShieldCheckIcon />
-                  <DropdownLabel>Privacy policy</DropdownLabel>
-                </DropdownItem>
-                <DropdownItem href="/share-feedback">
-                  <LightBulbIcon />
-                  <DropdownLabel>Share feedback</DropdownLabel>
-                </DropdownItem>
-                <DropdownDivider />
-                <DropdownItem href="/logout">
-                  <ArrowRightStartOnRectangleIcon />
-                  <DropdownLabel>Sign out</DropdownLabel>
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </NavbarSection>
-        </Navbar>
-      }
-      sidebar={<DashboardSidebar user={user} />}
+    <StackedLayout
+      navbar={<DashboardNavbar user={user} navItems={navItems} />}
+      sidebar={<DashboardSidebar navItems={navItems} />}
     >
       {children}
-    </SidebarLayout>
+    </StackedLayout>
   );
 }
