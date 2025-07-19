@@ -1,0 +1,15 @@
+# Ignore artifacts:
+build
+coverage
+
+# NextJS artifacts:
+.next
+
+# Prisma artifacts:
+packages/database/generated
+
+# Lock files:
+pnpm-lock.yaml
+
+# Tailwind Components:
+catalyst-components

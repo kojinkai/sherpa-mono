@@ -7,7 +7,7 @@ import { LoginActionState, loginFormSchema } from "./schema";
 
 export async function login(
   prevState: LoginActionState,
-  formData: FormData
+  formData: FormData,
 ): Promise<LoginActionState> {
   const form = Object.fromEntries(formData);
 

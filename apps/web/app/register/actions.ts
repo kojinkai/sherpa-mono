@@ -7,7 +7,7 @@ import { RegisterActionState, registerFormSchema } from "./schema";
 
 export async function register(
   prevState: RegisterActionState,
-  formData: FormData
+  formData: FormData,
 ): Promise<RegisterActionState> {
   const form = Object.fromEntries(formData);
 

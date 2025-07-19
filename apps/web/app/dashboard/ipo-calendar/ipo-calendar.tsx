@@ -36,7 +36,7 @@ function reducer(
   action: StandardAction<
     ActionTypes,
     TimeFilters | ExchangeFilters | StatusFilters
-  >
+  >,
 ) {
   switch (action.type) {
     case ActionTypes.TIME: {
@@ -134,7 +134,7 @@ export function IpoCalendar({ events }: IpoCalendarProps) {
         ],
       },
     ],
-    [state.time, state.exchange, state.status]
+    [state.time, state.exchange, state.status],
   );
 
   const filteredEvents = useMemo(
@@ -142,9 +142,9 @@ export function IpoCalendar({ events }: IpoCalendarProps) {
       flow(
         filter(filterFunctionMap[state.time]),
         filter(filterFunctionMap[state.exchange]),
-        filter(filterFunctionMap[state.status])
+        filter(filterFunctionMap[state.status]),
       )(events),
-    [state.time, state.exchange, state.status, events]
+    [state.time, state.exchange, state.status, events],
   );
 
   return (
