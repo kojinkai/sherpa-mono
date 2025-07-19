@@ -54,7 +54,7 @@ function delay(ms: number) {
       if (ipoEvents.length > 0) {
         allIpoEvents.push(...ipoEvents);
         console.log(
-          `Fetched ${ipoEvents.length} events for ${formatDate(currentDate)}`
+          `Fetched ${ipoEvents.length} events for ${formatDate(currentDate)}`,
         );
       } else {
         console.log(`No events for ${formatDate(currentDate)}`);

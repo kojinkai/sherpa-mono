@@ -51,11 +51,9 @@ pnpm run db:studio
 To regenerate the IPO seed data, follow these steps:
 
 1. **Set the Finnhub API Key**
-
    - Ensure the `FINNHUB_API_KEY` environment variable is set in your shell. This is required for the script to fetch data from the Finnhub API.
 
 2. **Compile the Seed Data Script**
-
    - Run the following command to compile `create-seed-data.ts`:
      ```sh
      pnpx tsc --esModuleInterop create-seed-data.ts

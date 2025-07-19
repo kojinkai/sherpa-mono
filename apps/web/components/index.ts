@@ -1,1 +1,2 @@
-export * from "./page-heading";
+export { PageHeading } from "./page-heading";
+export { QuickList } from "./quick-list";

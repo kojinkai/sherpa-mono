@@ -17,7 +17,7 @@ export default function RootLayout({
     <html
       className={clsx(
         "bg-white lg:bg-zinc-100 dark:bg-zinc-900 dark:lg:bg-zinc-950 antialiased",
-        inter.className
+        inter.className,
       )}
       lang="en"
     >

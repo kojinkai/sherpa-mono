@@ -25,3 +25,17 @@ model IPOEvent {
   symbol             String?
   totalSharesValue   Int?
 }
+
+model StockSymbol {
+  id              Int @id @default(autoincrement())
+  currency        String
+  description     String
+  displaySymbol   String
+  figi            String
+  isin            String?
+  mic             String
+  shareClassFIGI  String
+  symbol          String
+  symbol2         String
+  type            String
+}

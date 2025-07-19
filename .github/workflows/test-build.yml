@@ -29,3 +29,6 @@ jobs:
 
       - name: Run lint
         run: pnpm --filter web lint
+
+      - name: Run Tests
+        run: pnpm --filter web test

@@ -29,6 +29,7 @@ sherpa-mono/
 > **Note**: PostgreSQL will be automatically installed via Docker when you run the Edge Functions for the first time using `pnpm supabase:start`.
 >
 > **macOS users**: Install Deno with `brew install deno`
+
 ### Installation
 
 1. **Clone the repository:**
@@ -67,6 +68,7 @@ sherpa-mono/
 4. **Set up the database:**
 
 > **Note**: You can develop against a local version of Supabase if you run `pnpm supabase:start` from root. You will need to update the `DATABASE_URL` environment variable in the .env file you create in the `packages/database` directory to point PrismaJS to the local database URL. This URL is printed to the terminal when you run the `pnpm supabase:start` command
+
 ```bash
 cd packages/database
 pnpm db:generate    # Generate Prisma client

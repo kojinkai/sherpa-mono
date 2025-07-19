@@ -12,8 +12,8 @@ export function useGetLinkParams() {
         Object.entries({ ...params, ...param }).map(([key, value]) => [
           key,
           String(value),
-        ])
-      )
+        ]),
+      ),
     ).toString();
 
     return `?${queryString}`;
