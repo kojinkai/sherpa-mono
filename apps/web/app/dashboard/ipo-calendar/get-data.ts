@@ -1,6 +1,8 @@
+import { APIResponse } from "@/app/interface";
+import type { IPOEvent } from "database";
 import dayjs from "dayjs";
 
-export async function getIpoCalendarData() {
+export async function getIpoCalendarData(): Promise<APIResponse<IPOEvent[]>> {
   try {
     const apiKey = process.env.FINNHUB_API_KEY;
 
@@ -34,6 +36,7 @@ export async function getIpoCalendarData() {
   } catch (error) {
     console.error("Error fetching IPO calendar data:", error);
     return {
+      data: undefined,
       success: false,
       error: error instanceof Error ? error.message : "Unknown error occurred",
     };

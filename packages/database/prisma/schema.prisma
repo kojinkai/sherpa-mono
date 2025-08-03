@@ -9,9 +9,10 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id        Int        @id @default(autoincrement())
+  email     String     @unique
+  name      String?
+  watchlist Watchlist?
 }
 
 model IPOEvent {
@@ -27,7 +28,7 @@ model IPOEvent {
 }
 
 model StockSymbol {
-  id              Int @id @default(autoincrement())
+  id              Int         @id @default(autoincrement())
   currency        String
   description     String
   displaySymbol   String
@@ -38,4 +39,19 @@ model StockSymbol {
   symbol          String
   symbol2         String
   type            String
+  watchlists      Watchlist[]
 }
+
+model Watchlist {
+  id           Int          @id @default(autoincrement())
+  name         String       @default("My Watchlist")
+  userId       Int          @unique
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  stockSymbols StockSymbol[]
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  
+  /// Automatically created via database trigger when a User is created
+}
+
+

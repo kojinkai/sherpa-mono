@@ -1,8 +1,8 @@
-import { StockSymbolData } from "@/models";
 import {
   AlphaVantageTicker,
   AlphaVantageTickerNormalised,
-} from "@/models/stock-overview";
+  StockSymbolData,
+} from "@/models";
 import { formatNumber } from "@/utils/formatters/formatNumber";
 import { flow, map } from "lodash/fp";
 
@@ -23,7 +23,7 @@ import { flow, map } from "lodash/fp";
 // we need to merge the name in, which we get from a separate DB call to our stored
 // US symbols
 
-function normaliseAlphaVantaeTicker(
+function normaliseAlphaVantageTicker(
   stock: AlphaVantageTicker,
 ): AlphaVantageTickerNormalised {
   const convertChangeToFloat = (value: string) => {
@@ -61,8 +61,8 @@ function decorateAlphaVantageStockWithName(symbolData: StockSymbolData[]) {
     };
   };
 }
-export const transformer = (symbolData: StockSymbolData[]) =>
+export const mergeSymbolData = (symbolData: StockSymbolData[]) =>
   flow(
-    map(normaliseAlphaVantaeTicker),
+    map(normaliseAlphaVantageTicker),
     map(decorateAlphaVantageStockWithName(symbolData)),
   );

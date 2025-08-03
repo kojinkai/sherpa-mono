@@ -5,7 +5,6 @@ import { StackedLayout } from "@/catalyst-components";
 
 import { Metadata } from "next";
 import { DashboardNavbar } from "./dashboard-navbar";
-// import { DashboardSidebar } from "./dashboard-sidebar";
 
 import { DashboardSidebar } from "./dashboard-sidebar";
 import { NavItem } from "./interface";

@@ -1,4 +1,4 @@
-import { AlphaVantageTickerNormalisedWithName } from "@/models/stock-overview";
+import { AlphaVantageTickerNormalisedWithName } from "@/models";
 
 export interface QuickListProps {
   className?: string;

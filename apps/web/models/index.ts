@@ -1,7 +1,8 @@
 export {
+  type AlphaVantageCompanyOverview,
   type AlphaVantageTicker,
   type AlphaVantageTickerNormalised,
   type AlphaVantageTickerNormalisedWithName,
-} from "./stock-overview";
+} from "./alpha-vantage";
 
 export { type StockSymbolData } from "./stock-symbol";
