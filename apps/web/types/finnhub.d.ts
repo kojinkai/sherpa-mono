@@ -1,10 +1,28 @@
 declare module "finnhub" {
   export class ApiClient {
-    constructor(config: { api_key: string });
+    static instance: {
+      authentications: {
+        api_key: {
+          apiKey: string;
+        };
+      };
+    };
   }
 
   export class DefaultApi {
-    constructor(apiClient: ApiClient);
-    ipoCalendar(from: string, to: string): Promise<any>;
+    constructor();
+    ipoCalendar(
+      from: string,
+      to: string,
+      callback: (error: Error | null, data: any) => void,
+    ): void;
+    symbolSearch(
+      q: string,
+      callback: (error: Error | null, data: any) => void,
+    ): void;
+    stockSymbols(
+      exchange: string,
+      callback: (error: Error | null, data: any, response: any) => void,
+    ): void;
   }
 }

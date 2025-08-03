@@ -2,7 +2,11 @@ import { getIpoCalendarData } from "./get-data";
 import { IpoCalendar } from "./ipo-calendar";
 
 export default async function IpoCalendarPage() {
-  const { data: events } = await getIpoCalendarData();
+  const { data: events, success } = await getIpoCalendarData();
 
-  return <IpoCalendar events={events} />;
+  if (!success) {
+    return <div>Error loading IPO calendar</div>;
+  }
+
+  return <IpoCalendar events={events ?? []} />;
 }

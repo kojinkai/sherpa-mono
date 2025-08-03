@@ -35,7 +35,7 @@ const defaultProps = {
   title: "Last Updated",
 } satisfies QuickListProps;
 
-const setup = (props = {}) => {
+const setup = (props: Partial<QuickListProps> = {}) => {
   const propsWithDefault = { ...defaultProps, ...props };
   return render(<QuickList {...propsWithDefault} />);
 };
@@ -58,14 +58,20 @@ describe("The QuickList component", async () => {
       );
     });
 
-    test("displaying the stock ticker", async () => {
+    test("displaying the stock ticker as", async () => {
       setup();
 
-      expect(
-        within(screen.getAllByRole("listitem")[0]).getByText(
-          defaultProps.stocksList[0].ticker,
-        ),
-      ).toBeInTheDocument();
+      const link = within(screen.getAllByRole("listitem")[0]).getByRole(
+        "link",
+        {
+          name: defaultProps.stocksList[0].ticker,
+        },
+      );
+
+      expect(link).toHaveAttribute(
+        "href",
+        `/dashboard/symbol/${defaultProps.stocksList[0].ticker}`,
+      );
     });
 
     test("displaying the stock name", async () => {
@@ -239,7 +245,7 @@ describe("The QuickList component", async () => {
           {
             ticker: "AAPL",
             price: "150.25",
-            change_amount: 2.50,
+            change_amount: 2.5,
             change_percentage: 1.69,
             volume: "456789",
             name: "Apple Inc",

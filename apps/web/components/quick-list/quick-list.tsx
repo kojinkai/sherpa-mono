@@ -6,6 +6,7 @@ import clsx from "clsx";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { chunk } from "lodash/fp";
+import Link from "next/link";
 import { useState } from "react";
 import { QuickListProps } from "./interface";
 dayjs.extend(relativeTime);
@@ -46,7 +47,7 @@ export function QuickList({
             roboto_mono.className,
             "text-lime-600 dark:text-lime-400",
             "text-sm",
-            "text-right"
+            "text-right",
           )}
         >
           <time dateTime={lastupdated}>
@@ -65,14 +66,15 @@ export function QuickList({
             >
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-2">
-                  <div
+                  <Link
+                    href={`/dashboard/symbol/${stock.ticker}`}
                     className={clsx(
-                      "bg-zinc-600/10 text-zinc-700 group-data-hover:bg-zinc-600/20 dark:bg-white/5 dark:text-zinc-300 dark:group-data-hover:bg-white/10 rounded-md px-1.5 py-0.5 text-sm",
+                      "bg-zinc-600/10 text-zinc-700 hover:bg-zinc-600/20 dark:bg-white/5 dark:text-zinc-300 dark:hover:bg-white/10 rounded-md px-1.5 py-0.5 text-sm",
                       roboto_mono.className,
                     )}
                   >
                     {stock.ticker}
-                  </div>
+                  </Link>
                   <Badge color={stockIsUp ? "lime" : "red"}>
                     ${stock.price}
                   </Badge>
@@ -114,25 +116,25 @@ export function QuickList({
         })}
       </ul>
       <div className="my-2 flex justify-around">
-      <span className="items-baseline gap-x-2 sm:flex my-2">
-        {pages.map((page, index) => (
-          <Button
-            plain
-            aria-label={`Page ${index + 1}`}
-            aria-current={currentPage === index ? "page" : undefined}
-            className={clsx(
-              className,
-              "w-9 min-w-9 before:absolute before:-inset-px before:rounded-lg",
-              currentPage === index &&
-                "before:bg-zinc-950/5 dark:before:bg-white/10",
-            )}
-            key={index}
-            onClick={() => setCurrentPage(index)}
-          >
-            <span className="-mx-0.5">{index + 1}</span>
-          </Button>
-        ))}
-      </span>
+        <span className="items-baseline gap-x-2 sm:flex my-2">
+          {pages.map((page, index) => (
+            <Button
+              plain
+              aria-label={`Page ${index + 1}`}
+              aria-current={currentPage === index ? "page" : undefined}
+              className={clsx(
+                className,
+                "w-9 min-w-9 before:absolute before:-inset-px before:rounded-lg",
+                currentPage === index &&
+                  "before:bg-zinc-950/5 dark:before:bg-white/10",
+              )}
+              key={index}
+              onClick={() => setCurrentPage(index)}
+            >
+              <span className="-mx-0.5">{index + 1}</span>
+            </Button>
+          ))}
+        </span>
       </div>
     </div>
   );

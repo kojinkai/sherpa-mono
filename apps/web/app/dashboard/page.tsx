@@ -1,10 +1,10 @@
 import { QuickList } from "@/components";
-import { getData } from "./getData";
+import { getData } from "./get-data";
 
 export default async function DashboardPage() {
-  const data = await getData();
+  const { data, success } = await getData();
 
-  if (data) {
+  if (success) {
     const { last_updated, top_gainers, top_losers, most_actively_traded } =
       data;
 
